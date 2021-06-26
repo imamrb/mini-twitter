@@ -1,0 +1,28 @@
+.navigation.menu {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  li {
+    &.brand {
+      a {
+        color: rgba(29, 161, 242, 1);
+        &:hover {
+          color: black;
+          border-radius: 50px;
+        }
+      }
+    }
+    a {
+      border-radius: 50px;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: bold;
+      &:hover {
+        color: rgba(29, 161, 242, 1);
+      }
+    }
+    &.bottom-area {
+      margin-top: 20vh;
+    }
+  }
+}
