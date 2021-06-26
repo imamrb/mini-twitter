@@ -10,7 +10,20 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="container m-5">
+      <div class="columns is-mobile">
+        <div class="column">
+          <%= render 'layouts/navigation' %>
+        </div>
+        <div class="column is-two-fifths">
+          <%= yield %>
+        </div>
+
+        <div class="column ">
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>

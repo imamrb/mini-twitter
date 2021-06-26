@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 3afbb9371af4f71c369ad47b63ba6d1b69c1c1a5
+  branch: master
+  specs:
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -93,10 +101,17 @@ GEM
     erubi (1.10.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    font-awesome-rails (4.7.0.7)
+      railties (>= 3.2, < 7)
     formatador (0.3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -274,6 +289,9 @@ DEPENDENCIES
   byebug
   cancancan
   clearance
+  factory_bot_rails
+  faker!
+  font-awesome-rails
   guard
   guard-livereload
   jbuilder
