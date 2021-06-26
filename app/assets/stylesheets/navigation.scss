@@ -3,26 +3,38 @@
   height: 100vh;
   justify-content: space-around;
   li {
-    &.brand {
-      a {
-        color: rgba(29, 161, 242, 1);
-        &:hover {
-          color: black;
-          border-radius: 50px;
-        }
-      }
-    }
     a {
       border-radius: 50px;
-      color: black;
+      color: $text-black;
       font-size: 1.5rem;
       font-weight: bold;
       &:hover {
-        color: rgba(29, 161, 242, 1);
+        background-color: $background-soft;
+        color: darken($button-primary, 10%);
+      }
+    }
+    &.brand {
+      a {
+        width: fit-content;
+        color: $button-primary;
       }
     }
     &.bottom-area {
       margin-top: 20vh;
+      .button {
+        padding: 10px;
+        background-color: $button-primary;
+        color: $text-white;
+        &:hover {
+          background-color: darken($button-primary, 10%);
+        }
+      }
+      .link {
+        font-size: 1rem;
+        width: fit-content;
+        padding: 0;
+        color: $link-primary;
+      }
     }
   }
 }
