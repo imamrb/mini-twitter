@@ -21,6 +21,7 @@
     }
     &.bottom-area {
       margin-top: 20vh;
+      text-align: center;
       .button {
         padding: 10px;
         background-color: $button-primary;
@@ -32,7 +33,6 @@
       .link {
         font-size: 1rem;
         width: fit-content;
-        padding: 0;
         color: $link-primary;
       }
     }
