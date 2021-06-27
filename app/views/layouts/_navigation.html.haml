@@ -10,8 +10,9 @@
       %a Profile
     %li.bottom-area
       - if signed_in?
-        Signed in as: #{current_user.email}
-        #{button_to 'Sign out', sign_out_path, method: :delete}
+        %span.link
+          = link_to "#{current_user.name}", users_path, class: 'button'
+        = link_to 'Sign out', sign_out_path, method: :delete, class: 'link'
       - else
         = link_to 'Sign in', sign_in_path, class: 'button'
         %p.mt-3.mr-2
