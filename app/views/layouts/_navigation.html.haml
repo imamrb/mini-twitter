@@ -1,0 +1,20 @@
+%aside.navigation.menu
+  %ul.menu-list
+    %li.brand
+      = link_to fa_icon('twitter 2x', class: 'fa-fw mr-1', base: "square-o"), root_path
+    %li
+      = link_to fa_icon('home', class: 'fa-fw mr-1', text: 'Home'), root_path
+    %li
+      %a Followers Feed
+    %li
+      %a Profile
+    %li.bottom-area
+      - if signed_in?
+        %span.link
+          = link_to "#{current_user.name}", users_path, class: 'button'
+        = link_to 'Sign out', sign_out_path, method: :delete, class: 'link'
+      - else
+        = link_to 'Sign in', sign_in_path, class: 'button'
+        %p.mt-3.mr-2
+          Don't have an account?
+          %span= link_to t(".sign_up"), sign_up_path, class: 'link'

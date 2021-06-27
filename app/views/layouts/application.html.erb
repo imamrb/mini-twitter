@@ -11,16 +11,17 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="container m-5">
+    <div class="container mt-5">
       <div class="columns is-mobile">
-        <div class="column">
+        <div class="column is-one-fifths">
           <%= render 'layouts/navigation' %>
         </div>
-        <div class="column is-two-fifths">
+        <div class="column is-three-fifths box content">
+          <%= render 'layouts/flash' %>
           <%= yield %>
         </div>
 
-        <div class="column ">
+        <div class="column is-one-fifths">
 
         </div>
       </div>

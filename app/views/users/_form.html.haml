@@ -1,0 +1,49 @@
+= simple_form_for user do |f|
+  .field
+    .control
+      = f.input :name,
+                input_html: { class: 'input' },
+                wrapper: false,
+                label_html: { class: 'label' }
+  .field
+    .control
+      = f.input :username,
+                required: true,
+                input_html: { class: 'input' },
+                wrapper: false,
+                label_html: { class: 'label' }
+  .field
+    .control
+      = f.input :email,
+                required: true,
+                placeholder: 'hello@',
+                input_html: { class: 'input' },
+                wrapper: false,
+                label_html: { class: 'label'  }
+  .field
+    .control
+      = f.input :password,
+                required: true,
+                input_html: { class: 'input' },
+                wrapper: false,
+                label_html: { class: 'label' }
+  .field
+    .control
+      = f.input :bio,
+                input_html: { class: 'textarea' },
+                wrapper: false,
+                label_html: { class: 'label' }
+  .field
+    .control
+      = f.label :terms_of_service, class: 'checkbox' do
+        = f.check_box :terms_of_service, class: 'checkbox', required: true, checked: false
+        I agree to the terms and conditions
+
+  .field.is-grouped
+    .control
+      = f.button :submit, 'Sign Up', class:'button is-link'
+    .control
+      = f.button :button, 'Clear', type: 'reset',  class:'button is-link is-light'
+
+  .other-links
+    = link_to t('.sign_in'), sign_in_path

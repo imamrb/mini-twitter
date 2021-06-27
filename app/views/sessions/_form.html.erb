@@ -1,69 +1,15 @@
-<%= form_for :session, url: session_path do |form| %>
+<%= simple_form_for :session, url: session_path do |f| %>
   <div class="field">
     <div class="control">
-      <%= form.input :name, required: true, input_html: { class: "input"}, label_html: { class: "label" } %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control has-icons-left has-icons-right">
-      <%= form.input :username, required: true, input_html: { class: "input"}, label_html: { class: "label" } %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control has-icons-left has-icons-right">
-      <%= form.input :email, required: true, placeholder: 'hello@' input_html: { class: "input"}, label_html: { class: "label" } %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-exclamation-triangle"></i>
-      </span>
-    </div>
-  </div>
-
-	<div class="field">
-		<div class="control">
-			<%= f.input :password, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-	  </div>
-	</div>
-
-  <div class="field">
-    <label class="label">Bio</label>
-    <div class="control">
-      <textarea class="textarea" placeholder="Textarea"></textarea>
+      <%= f.input :email, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
     </div>
   </div>
 
   <div class="field">
     <div class="control">
-      <label class="checkbox">
-        <input type="checkbox">
-        I agree to the <a href="#">terms and conditions</a>
-      </label>
+    <%= f.input :password, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
     </div>
   </div>
 
-  <div class="field is-grouped">
-    <div class="control">
-      <%= f.button :submit, "Sign Up", class:"button is-link" %>
-    </div>
-    <div class="control">
-      <%= f.button :submit, "Cancel", class:"button is-link is-light" %>
-    </div>
-  </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
+  <%= f.button :submit, "Sign in", class:"button is-info is-medium" %>
 <% end %>
