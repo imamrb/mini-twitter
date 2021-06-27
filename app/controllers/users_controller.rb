@@ -1,5 +1,4 @@
 class UsersController < Clearance::UsersController
-  before_action :user_params
 
   def create
     @user = User.new(user_params)

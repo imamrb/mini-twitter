@@ -16,18 +16,19 @@
 #
 # Indexes
 #
-#  index_users_on_email           (email)
+#  index_users_on_email           (email) UNIQUE
 #  index_users_on_remember_token  (remember_token)
 #  index_users_on_username        (username) UNIQUE
 #
 class User < ApplicationRecord
   include Clearance::User
+  # Virtual attribute for terms and service
   validates :terms_of_service, acceptance: true
 
   VALID_EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/.freeze
 
   validates :name, presence: true
-  
+
   validates :username,
             presence: true,
             uniqueness: { case_sensitive: false }
