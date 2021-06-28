@@ -1,0 +1,36 @@
+.tweet-form {
+  &.media {
+    width: 50%;
+  }
+  box-shadow: 0 1px 1px -1px gray;
+}
+.tweet-feed {
+  height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ul {
+    list-style: none;
+  }
+}
+.tweet-card {
+  p {
+    color: $black;
+  }
+  small {
+    color: $text-gray;
+  }
+  .body {
+    margin-top: 1rem;
+    &:hover{
+      border-radius: 5px;
+      border-top: 5px;
+      background-color: $background-gray-soft;
+    }
+  }
+  .actions.level {
+    display: flex;
+    a {
+      margin: 0.5rem 0.5rem 0 0;
+    }
+  }
+}
