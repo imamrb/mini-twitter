@@ -1,0 +1,18 @@
+<div class="box content">
+  <section class="tweet-form">
+    <h2>Home<h2>
+    <% if signed_in? %>
+      <%= render 'tweets/form', tweet: @tweet %>
+    <% else %>
+      <div class="field">
+        <div class="control">
+          <textarea class="textarea has-fixed-size" disabled placeholder="Sign in to start tweeting"></textarea>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section class='tweet-feed'>
+    <%= render 'tweets/tweet_feed', tweets: @tweets %>
+  </section>
+</div>
