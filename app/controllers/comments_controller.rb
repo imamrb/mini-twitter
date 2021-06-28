@@ -24,7 +24,6 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    binding.pry
     @comment = Comment.find(params[:id])
   end
 
