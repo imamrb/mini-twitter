@@ -20,7 +20,7 @@
 #  index_users_on_remember_token  (remember_token)
 #  index_users_on_username        (username) UNIQUE
 #
-class User < Application
+class User < ApplicationRecord
   include Clearance::User
 
   VALID_EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/.freeze

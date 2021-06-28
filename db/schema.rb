@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_132426) do
+ActiveRecord::Schema.define(version: 2021_06_28_134259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text "body"
+    t.text "body", null: false
     t.string "commentable_type", null: false
     t.bigint "commentable_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 2021_06_28_132426) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["following_id"], name: "index_follows_on_following_id"
     t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "likeable_type", null: false
+    t.bigint "likeable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
+    t.index ["user_id", "likeable_id", "likeable_type"], name: "index_likes_on_user_id_and_likeable_id_and_likeable_type", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "tweets", force: :cascade do |t|
@@ -60,5 +71,6 @@ ActiveRecord::Schema.define(version: 2021_06_28_132426) do
 
   add_foreign_key "follows", "users"
   add_foreign_key "follows", "users", column: "following_id"
+  add_foreign_key "likes", "users"
   add_foreign_key "tweets", "users", column: "author_id"
 end
