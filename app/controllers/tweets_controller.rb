@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  skip_before_action :require_login, only: :index
+  skip_before_action :require_login, only: [:index, :show]
   before_action :set_tweet, only: [:show, :destroy]
 
   def index
