@@ -25,7 +25,8 @@ FactoryBot.define do
     name { Faker::Name.name }
     sequence(:username) { Faker::Internet.username }
     sequence(:email) { |n| "user_#{n}@example.com" }
+    bio { Faker::Quote.famous_last_words  }
     address { Faker::Address.full_address }
-    password { 'secretpass' }
+    password { 'password' }
   end
 end

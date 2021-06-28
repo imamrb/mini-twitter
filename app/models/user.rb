@@ -20,12 +20,29 @@
 #  index_users_on_remember_token  (remember_token)
 #  index_users_on_username        (username) UNIQUE
 #
-class User < ApplicationRecord
+class User < Application
   include Clearance::User
-  # Virtual attribute for terms and service
-  validates :terms_of_service, acceptance: true
 
   VALID_EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/.freeze
+
+  # Associations
+  has_many :follows
+
+  # user followers are other user's following
+  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  # user followings are where user is the follower
+  has_many :following_relationships, foreign_key: :user_id, class_name: 'Follow'
+  has_many :followings, through: :following_relationships, source: :following
+
+  has_many :tweets,
+           class_name: 'Tweet',
+           dependent: :destroy,
+           foreign_key: 'author_id'
+
+  # Virtual attribute for terms and service
+  validates :terms_of_service, acceptance: true
 
   validates :name, presence: true
 
@@ -40,18 +57,4 @@ class User < ApplicationRecord
             presence: true,
             length: { minimum: 6 }
 
-  has_many :tweets,
-           class_name: 'Tweet',
-           dependent: :destroy,
-           foreign_key: 'author_id'
-
-  has_many :follows
-
-  # user followers are other user's following
-  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
-  has_many :followers, through: :follower_relationships, source: :follower
-
-  # user followings are where user is the follower
-  has_many :following_relationships, foreign_key: :user_id, class_name: 'Follow'
-  has_many :followings, through: :following_relationships, source: :following
 end
