@@ -4,6 +4,17 @@
 
 A miniature version of Twitter built with Ruby on Rails
 
+
+## ERD
+
+Entity Relationship Diagram of the project models.
+
+<div align="center">
+  <img src="./erd.png" alt="MiniTwitter ERD">
+
+  <p>MiniTwitter ERD</p>
+</div>
+
 ## Installation
 
 - Setup rails environment first: https://gorails.com/setup
@@ -23,9 +34,9 @@ At this moment, the rails server will be running at - [http://localhost:3000/](h
 
 **Login with Credentials**
 
-email: `admin@gmail.com`
+email: `user@gmail.com`
 
-password: `secret`
+password: `password`
 
 
 ## Contributing
@@ -35,4 +46,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-
