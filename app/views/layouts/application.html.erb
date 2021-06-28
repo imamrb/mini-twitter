@@ -16,13 +16,13 @@
         <div class="column is-one-quarter">
           <%= render 'layouts/navigation' %>
         </div>
-        <div class="column is-two-quarter box content">
-          <%= render 'layouts/flash' %>
+        <div class="column is-two-quarter">
+          <div class='flash'>
+            <%= render 'layouts/flash' %>
+          </div>
           <%= yield %>
         </div>
-
         <div class="column is-one-quarter">
-
         </div>
       </div>
     </div>
