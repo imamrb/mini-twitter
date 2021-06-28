@@ -10,7 +10,7 @@ A miniature version of Twitter built with Ruby on Rails
 Entity Relationship Diagram of the project models.
 
 <div align="center">
-  <img src="./erd.png" alt="MiniTwitter ERD">
+  <img src="./erd.png" width="400" alt="MiniTwitter ERD">
 
   <p>MiniTwitter ERD</p>
 </div>
