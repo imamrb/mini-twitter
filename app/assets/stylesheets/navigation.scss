@@ -1,6 +1,5 @@
 .navigation.menu {
   display: flex;
-  height: 100vh;
   justify-content: space-around;
   li {
     a {
@@ -20,7 +19,7 @@
       }
     }
     &.bottom-area {
-      margin-top: 20vh;
+      margin-top: 10rem;
       text-align: center;
       .button {
         padding: 10px;

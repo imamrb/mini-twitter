@@ -1,0 +1,4 @@
+var twitterFeed = "<%=j render 'tweets/tweet_feed', tweets: @tweets %>"
+document.querySelector('.tweet-feed').innerHTML= twitterFeed
+
+window.scroll({ top: 0, behavior: 'smooth' });

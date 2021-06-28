@@ -1,0 +1,8 @@
+<!-- View tweets in homepage, also used for pagination through ajax -->
+<div class="tweet-list">
+  <% tweets.each do | tweet | %>
+    <%= render 'tweets/tweet_card', tweet: tweet%>
+  <% end %>
+
+  <%= paginate tweets, remote: true %>
+</div>
