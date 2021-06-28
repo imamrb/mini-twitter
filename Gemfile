@@ -36,6 +36,7 @@ group :development do
   gem 'listen'
   gem 'spring'
 
+  gem 'rails-erd'
   gem 'guard'
   gem 'guard-livereload', require: false
   gem 'rubocop', require: false
