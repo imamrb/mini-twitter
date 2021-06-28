@@ -6,14 +6,15 @@ def seed
   15.times do
     tweet = FactoryBot.create(:tweet, author: user)
     follow = FactoryBot.create(:follow, follower: user)
-    FactoryBot.create(:follow, follower: follow.following, following: user )
+    anotheruser = follow.following
+    FactoryBot.create(:follow, follower: anotheruser, following: user )
+
+    rand(1..3).times do
+      FactoryBot.create(:like, likeable: tweet, user: anotheruser)
+    end
 
     rand(3..5).times do
-      comment = FactoryBot.create(:comment, commentable: tweet)
-
-      rand(1..5).times do
-        FactoryBot.create(:like, likeable: comment)
-      end
+      FactoryBot.create(:comment, commentable: tweet, author: anotheruser)
     end
   end
 

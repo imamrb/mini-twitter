@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_06_28_134259) do
     t.text "body", null: false
     t.string "commentable_type", null: false
     t.bigint "commentable_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
 
@@ -41,7 +43,6 @@ ActiveRecord::Schema.define(version: 2021_06_28_134259) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
-    t.index ["user_id", "likeable_id", "likeable_type"], name: "index_likes_on_user_id_and_likeable_id_and_likeable_type", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_134259) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "follows", "users"
   add_foreign_key "follows", "users", column: "following_id"
   add_foreign_key "likes", "users"
