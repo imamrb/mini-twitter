@@ -4,6 +4,12 @@
 
 A miniature version of Twitter built with Ruby on Rails
 
+Live Link: [simp-twitter.herokuapp.com](https://simp-twitter.herokuapp.com)
+
+**Test User**
+
+Email: `user@example.com`<br>
+Password: `password`
 
 ## ERD
 
@@ -34,7 +40,7 @@ At this moment, the rails server will be running at - [http://localhost:3000/](h
 
 **Login with Credentials**
 
-email: `user@gmail.com`
+email: `user@example.com`
 
 password: `password`
 
