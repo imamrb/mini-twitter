@@ -21,7 +21,7 @@
       <nav class="actions level">
         <div class="level-left">
           <%= link_to 'Like' %>
-          <%= link_to 'Comment' %>
+          <%= link_to 'Comment', tweet %>
         </div>
         <div class="level-right">
           <% if signed_in? && current_user.id == tweet.author_id %>
