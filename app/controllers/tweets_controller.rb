@@ -9,7 +9,9 @@ class TweetsController < ApplicationController
     respond_to { |format| format.js } if request.xhr?
   end
 
-  def show; end
+  def show
+    @comments = @tweet.comments
+  end
 
   def create
     @tweet = Tweet.new(tweet_params)
