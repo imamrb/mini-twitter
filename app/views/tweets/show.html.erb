@@ -1,4 +1,12 @@
 <section class="content">
   <h2>Tweet</h2>
   <%= render 'tweets/tweet_card', tweet: @tweet %>
+
+  <h3>Comments</h3>
+
+  <% if signed_in? %>
+    <%= render 'tweets/comment_form', comment: @tweet.comments.new %>
+  <% end %>
+
+  <%= render 'tweets/tweet_comments', comments: @comments %>
 </section>
