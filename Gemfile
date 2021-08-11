@@ -24,6 +24,7 @@ gem 'kaminari'
 
 gem 'factory_bot_rails'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'avo'
 
 group :development, :test do
   gem 'byebug', platforms: %i(mri mingw x64_mingw)
